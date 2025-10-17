@@ -51,6 +51,7 @@ fn main() {
     println!("The threshold is {THRESHOLD}");
     println!("{} is {}", n, if is_big(n) { "bigggg" } else { "smol" });
 
+    // THRESHOLD = 5; // compile error due to constant cannot be modified
 }
 
 static LANGUAGE: &str = "Rust";
