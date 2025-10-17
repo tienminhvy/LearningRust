@@ -116,4 +116,12 @@ fn data_types() {
     let heart_eyed_cat = '😻';
 
     println!("{c} {z} {heart_eyed_cat}");
+
+    // Compound types
+
+    let tup: (i32, f64, &'static str, char) = (15, 23.2, "test", 'n');
+    let (x, y, z, k) = tup;
+    
+    println!("{x}, {y}, {z}, {k}");
+    println!("{tup:?}");
 }
