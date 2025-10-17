@@ -52,6 +52,9 @@ fn main() {
     println!("{} is {}", n, if is_big(n) { "bigggg" } else { "smol" });
 
     // THRESHOLD = 5; // compile error due to constant cannot be modified
+
+    // Data types
+    data_types();
 }
 
 static LANGUAGE: &str = "Rust";
@@ -59,4 +62,31 @@ const THRESHOLD: i32 = 3;
 
 fn is_big(n: i32) -> bool {
     n > THRESHOLD
+}
+
+fn data_types() {
+    // let guess_me = "99".parse().expect("Not a Number"); // will not work due to explicit type definition is required for this case
+    let guess_me : i32 = "99".parse().expect("Not a Number"); // worked
+    println!("I guess {guess_me}");
+
+    // i for integer, u for unsigned integer
+    // e.g. i32 - u32
+    // isize - usize => architecture dependent
+
+    // Integer literals
+    let literal_1: i32 = 12_345;
+    let literal_2: i32 = 0xff;
+    let literal_3: i32 = 0o77;
+    let literal_4: i32 = 0b1111_0000;
+    let literal_5: u8 = b'A';
+
+    println!("Literals: {} {} {} {} {}", literal_1, literal_2, literal_3, literal_4, literal_5);
+
+    // Floating-points types
+    // f32 or f64, all are signed
+
+    let n_1: f64 = 32.05;
+    let n_2: f32 = 32.05;
+
+    println!("Floats: {n_1} {n_2}");
 }
