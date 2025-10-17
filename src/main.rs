@@ -119,9 +119,15 @@ fn data_types() {
 
     // Compound types
 
+    // a tuple is a size-fixed data type, its size cannot be modified (shrink or grow)
     let tup: (i32, f64, &'static str, char) = (15, 23.2, "test", 'n');
     let (x, y, z, k) = tup;
     
     println!("{x}, {y}, {z}, {k}");
     println!("{tup:?}");
+    
+    let _fifteen: i32 = tup.0;
+    let _twenty_three_point_two: f64 = tup.1;
+    let _test: &'static str = tup.2;
+    let _n: char = tup.3;
 }
