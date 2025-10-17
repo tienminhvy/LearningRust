@@ -12,4 +12,16 @@ fn main() {
 
     mutable = 11;
     println!("After mutation: {}", mutable);
+
+    // Defining constants
+
+    const PI: f64 = 3.14;
+    println!("The PI: {PI}");
+
+    // Shadowing definition
+
+    let x: i32 = 15;
+    let x: i32 = x + 5;
+
+    println!("Shadowing variable: {}", x);
 }
