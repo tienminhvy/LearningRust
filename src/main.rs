@@ -89,4 +89,31 @@ fn data_types() {
     let n_2: f32 = 32.05;
 
     println!("Floats: {n_1} {n_2}");
+
+    // Numeric Operations
+
+    let sum: i32 = 5 + 10;
+    let difference: f64 = 192.35 - 912.16;
+    let product: i32 = 52 * 3;
+    let quotient: f64 = 56.7 / 23.2;
+    let truncated: i32 = -5 / 3;
+
+    let remainder: i32 = 93 % 4;
+
+    println!("{sum} {difference} {product} {quotient} {truncated} {remainder}");
+
+    // The boolean type
+
+    let me = true;
+    let him: bool = false;
+
+    println!("he is {him}, I am {me}");
+
+    // Character type
+
+    let c = 'z';
+    let z: char = 'ℤ'; // with explicit type annotation
+    let heart_eyed_cat = '😻';
+
+    println!("{c} {z} {heart_eyed_cat}");
 }
