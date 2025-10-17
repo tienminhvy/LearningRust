@@ -1,3 +1,5 @@
+use std::io;
+
 fn main() {
     println!("Hello, world!");
 
@@ -130,4 +132,38 @@ fn data_types() {
     let _twenty_three_point_two: f64 = tup.1;
     let _test: &'static str = tup.2;
     let _n: char = tup.3;
+
+    // an array is a dynamic size data type.
+    let fibonacci_short: [i32; 6] = [1, 1, 2, 3, 5, 8];
+    println!("{fibonacci_short:?}");
+
+    // array can be initialized
+    let list_of_string: [&'static str; 5] = ["string"; 5];
+    println!("{list_of_string:?}");
+
+    // Accessing array value is just like another language like Cpp, Java,...
+
+    // This method below will1 cause panic if array index is out of bound
+    invalid_array_element_access_demo();
+}
+
+fn invalid_array_element_access_demo() {
+    let a: [i32; 5] = [1, 2, 3, 4, 5];
+
+    println!("Please enter an array index.");
+
+    let mut index = String::new();
+
+    io::stdin()
+        .read_line(&mut index)
+        .expect("Failed to read line");
+
+    let index: usize = index
+        .trim()
+        .parse()
+        .expect("Index entered was not a number");
+
+    let element = a[index];
+
+    println!("The value of the element at index {index} is: {element}");
 }
