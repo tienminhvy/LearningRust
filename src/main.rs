@@ -23,5 +23,39 @@ fn main() {
     let x: i32 = 15;
     let x: i32 = x + 5;
 
+    {
+        let x: i32 = x * 20;
+        println!("Block scoped shadowing variable: {x}");
+    }
+
     println!("Shadowing variable: {}", x);
+
+    // Another shadowing eg - shadowing is creating new variable with the same name but data type may different
+
+    let spaces: &'static str = "  ";
+    println!("spaces: {spaces}");
+    
+    let spaces: usize = spaces.len();
+    println!("spaces: {spaces}");
+
+    // Cannot do this
+    /*
+        let mut this: &'static str = "    ";
+        this = this.len(); // error for mismatched type
+    */
+
+    // The Constants
+    println!("I'm learning new language, it's called {LANGUAGE}");
+    
+    let n: i32 = 22;
+    println!("The threshold is {THRESHOLD}");
+    println!("{} is {}", n, if is_big(n) { "bigggg" } else { "smol" });
+
+}
+
+static LANGUAGE: &str = "Rust";
+const THRESHOLD: i32 = 3;
+
+fn is_big(n: i32) -> bool {
+    n > THRESHOLD
 }
