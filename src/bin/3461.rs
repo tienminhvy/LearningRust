@@ -4,7 +4,7 @@ fn main() {
     has_same_digits(String::from("12345"));
 }
 
-fn has_same_digits(s: String) -> bool {
+fn has_same_digits(s: String) -> bool { // O(N^2)
     let mut chars: Vec<char> = s.chars().collect();
     
     let mut i: usize = 0;
